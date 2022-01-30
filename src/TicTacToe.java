@@ -133,9 +133,10 @@ public class TicTacToe {
         winning.add(cross2);
 
         for(List l: winning) {                  // for each List l inside of winning
+
             if(playerPositions.containsAll(l)) {
                 return "Congratulations.  You won!";
-            } else if (cpuPositions.contains(l)) {
+            } else if (cpuPositions.containsAll(l)) {
                 return "CPU Wins!  Sorry :(";
             } else if (playerPositions.size() + cpuPositions.size() == 9) {
                 return "This is a tie!";
