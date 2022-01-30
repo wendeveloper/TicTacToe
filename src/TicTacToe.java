@@ -26,6 +26,7 @@ public class TicTacToe {
             Scanner scan = new Scanner(System.in);
             System.out.println("Enter your placement (1-9):");          // prompt user to enter position
             int playerPos = scan.nextInt();                             // get position
+
             while(playerPositions.contains(playerPos) || cpuPositions.contains(playerPos)) {
                 System.out.println("Position taken! Enter a different position.");  // if position already taken
                 playerPos = scan.nextInt();
@@ -41,6 +42,7 @@ public class TicTacToe {
             String result = checkWinner();   // check if there's a winner
             if (result.length() > 0) {
                 System.out.println(result);
+                printGameBoard(gameBoard);
                 break;
             }
 
@@ -59,15 +61,17 @@ public class TicTacToe {
             result = checkWinner();     // check if there's a winner
             if (result.length() > 0) {
                 System.out.println(result);
+                printGameBoard(gameBoard);
                 break;
             }
 
         }
+
+
     }
 
     public static void placePiece(char[][] gameBoard, int pos, String user) {
         char symbol = ' ';
-        System.out.println(user + " pos: " + pos);
 
         if (user.equals("player")) {
             symbol = 'X';
@@ -154,5 +158,6 @@ public class TicTacToe {
             System.out.println();               // after each row, print a line
         }
     }
+
 
 }
